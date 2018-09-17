@@ -14,6 +14,6 @@ const payload = {
 }
 
 seneca.act(Object.assign({}, pattern, payload), (err, response) => {
-  if (err) return reject(err)
-  return resolve(response)
+  if (err) return console.error(err)
+  console.log(response)
 })
