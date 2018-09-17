@@ -2,20 +2,25 @@
   "name": "seneca-tutorial",
   "version": "1.0.0",
   "description": "This repository is a set of seneca examples based on seneca documentation. http://senecajs.org/docs/",
+  "author": "",
+  "license": "ISC",
   "main": "index.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "start": "npm run build && node lib/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "seneca": "^3.7.0"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2017": "^6.24.1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fehmathais/seneca-tutorial.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/fehmathais/seneca-tutorial/issues"
   },
