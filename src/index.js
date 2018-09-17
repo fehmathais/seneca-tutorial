@@ -1,10 +1,19 @@
 var seneca = require('seneca')()
 
-seneca.add('role:math,cmd:sum', (msg, reply) => {
-  reply(null, {answer: (msg.left + msg.right)})
+seneca.add('role:entity,cmd:create-checklist', (msg, done) => {
+  done(null, {response: {status: true, result: msg.name }})
 })
 
-seneca.act({role: 'math', cmd: 'sum', left: 1, right: 2}, function (err, result) {
-  if (err) return console.error(err)
-  console.log(result)
+const pattern = {
+  role: 'entity', cmd: 'create-checklist'
+}
+
+const payload = {
+  name: 'Limpar cozinha',
+  date: '2018-09-17',
+}
+
+seneca.act(Object.assign({}, pattern, payload), (err, response) => {
+  if (err) return reject(err)
+  return resolve(response)
 })
