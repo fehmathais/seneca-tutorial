@@ -8,14 +8,16 @@
   "scripts": {
     "build": "babel src -d lib",
     "start": "npm run build && node lib/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/lab -v"
   },
   "dependencies": {
     "seneca": "^3.7.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-es2017": "^6.24.1"
+    "babel-preset-es2017": "^6.24.1",
+    "code": "^5.2.0",
+    "lab": "^16.1.0"
   },
   "repository": {
     "type": "git",
